@@ -1,28 +1,50 @@
-package com.example.newyorktimes;
+package com.example.newyorktimes.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+
 public class ModelNews {
-    @Expose
-    @SerializedName("title")
-    private String title;
 
+    @SerializedName("results")
     @Expose
-    @SerializedName("abstract")
-    private String description;
+    private ArrayList<Results> results;
 
-    @Expose
-    @SerializedName("url")
-    private String image_url;
-
-    public ModelNews(String title, String description, String image_url) {
-        this.title = title;
-        this.description = description;
-        this.image_url = image_url;
+    public ArrayList<Results> getResults() {
+        return results;
     }
 
-    public String getTitle() {
+    public void setResults(ArrayList<Results> results) {
+        this.results = results;
+    }
+
+    public class Results{
+    @SerializedName("title")
+    @Expose
+    private String title;
+
+    @SerializedName("abstract")
+    @Expose
+    private String description;
+
+    @SerializedName("url")
+    @Expose
+    private String url;
+
+    @SerializedName("thumbnail_standard")
+    @Expose
+    private String image_url;
+
+        public String getImage_url() {
+            return image_url;
+        }
+
+        public void setImage_url(String image_url) {
+            this.image_url = image_url;
+        }
+
+        public String getTitle() {
         return title;
     }
 
@@ -38,11 +60,13 @@ public class ModelNews {
         this.description = description;
     }
 
-    public String getImage_url() {
-        return image_url;
+    public String getUrl() {
+        return url;
     }
 
-    public void setImage_url(String image_url) {
-        this.image_url = image_url;
+    public void setUrl(String url) {
+        this.url = url;
     }
+
+        }
 }
