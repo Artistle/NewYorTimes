@@ -2,18 +2,23 @@
 <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
-
-    tools:context=".MainActivity"
+    tools:context=".view.MainActivity"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical">
-
-
-    <android.support.v7.widget.RecyclerView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recycler_news">
+        android:layout_height="wrap_content"
+        android:id="@+id/main_frame_layout"
+        android:layout_weight="1">
 
-    </android.support.v7.widget.RecyclerView>
+    </FrameLayout>
 
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:menu="@menu/bottom_view_menu">
+    </android.support.design.widget.BottomNavigationView>
 </LinearLayout>
